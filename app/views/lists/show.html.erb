@@ -1,1 +1,16 @@
-<h2>Selected list</h2>
+<h2><%= @list.name %></h2>
+<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+<%= link_to "Back to all lists", lists_path %>
+
+<% @list.bookmarks.each do |bookmark| %>
+<ul>
+<img src='<%= bookmark.movie.poster_url %>'>
+<li><%= bookmark.movie.title %></li>
+<li><%= bookmark.movie.rating %></li>
+<li><%= bookmark.movie.overview %></li>
+<li><%= link_to "Delete",
+    list_path(@list),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %></li>
+</ul>
+<% end %>
