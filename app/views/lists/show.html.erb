@@ -5,11 +5,12 @@
 <% @list.bookmarks.each do |bookmark| %>
 <ul>
 <img src='<%= bookmark.movie.poster_url %>'>
-<li><%= bookmark.movie.title %></li>
-<li><%= bookmark.movie.rating %></li>
-<li><%= bookmark.movie.overview %></li>
-<li><%= link_to "Delete",
-    list_path(@list),
+  <li><%= bookmark.movie.title %></li>
+  <li><%= bookmark.movie.rating %></li>
+  <li><%= bookmark.movie.overview %></li>
+  <li><%= link_to "Delete",
+    bookmark_path(bookmark),
+    method: :delete,
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %></li>
 </ul>
