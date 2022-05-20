@@ -1,11 +1,10 @@
 <%= render "shared/navbar" %>
 
-<h2>All lists</h2>
-
 
 <% @lists.each do |l| %>
 <ul>
-<li><%= link_to l.name, list_path(l) %></li>
+<div class='category-container'>
+<li class='category-list'><%= link_to l.name, list_path(l) %></li>
+</div>
 </ul>
-
 <% end %>
