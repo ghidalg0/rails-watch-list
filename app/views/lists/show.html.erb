@@ -1,3 +1,7 @@
+
+<div class="container">
+<%= render "shared/navbar" %>
+
 <h2><%= @list.name %></h2>
 <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
 <%= link_to "Back to all lists", lists_path %>
@@ -16,4 +20,8 @@
 </ul>
 <% end %>
 
-<%= cl_image_tag("jaltpncsdefikfr7knnd", width: 400, height: 300, crop: :fill) %>
+</div>
+
+
+
+<%# <%= cl_image_tag("jaltpncsdefikfr7knnd", width: 400, height: 300, crop: :fill) %>
